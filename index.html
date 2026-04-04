@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFINET IT Solutions</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <!-- Icons (optional) -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <img src="Images/infinetLogo-navbar.png" alt="INFINET" height="62" />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav"
+            >
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" data-i18n="nav_services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why" data-i18n="nav_why">Why us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" data-i18n="nav_projects">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-i18n="nav_about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-primary px-3" href="#contact" data-i18n="nav_cta">
+                            Get in touch
+                        </a>
+                    </li>
+                    <!-- Language switcher -->
+                    <li class="nav-item dropdown ms-lg-2 mt-2 mt-lg-0">
+                        <button class="btn btn-sm lang-dropdown-toggle dropdown-toggle" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            🇬🇧 EN
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                            <li>
+                                <button class="dropdown-item" id="lang-en">🇬🇧 English</button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item" id="lang-el">🇬🇷 Ελληνικά</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="hero" class="hero scroll-offset">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <span
+                        class="badge bg-transparent text-uppercase text-primary hero-badge mb-3"
+                        data-i18n="hero_badge"
+                    >
+                        Software • AI • Web • IT
+                    </span>
+                    <h1 class="hero-title mb-3">
+                        IT, Software &amp; Web Solutions<br>for Business.
+                    </h1>
+                    <p class="hero-subtitle mb-4" data-i18n="hero_subtitle">
+                        We design, build, and support secure IT infrastructure, custom
+                        software, and online solutions — so your business runs without
+                        interruption and grows on solid ground. We also help businesses
+                        adopt AI tools and build smarter, AI-powered applications.
+                    </p>
+                    <p class="mb-4 text-muted small" data-i18n="hero_trust">
+                        Trusted by businesses in Greece since 1996.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#contact" class="btn btn-primary btn-lg" data-i18n="hero_cta_primary">
+                            Contact our team
+                        </a>
+                        <a href="#services" class="btn btn-outline-primary btn-lg" data-i18n="hero_cta_secondary">
+                            Explore services
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Hero image -->
+                    <img
+                        src="Images/ai-image.jpg"
+                        alt="INFINET IT Solutions"
+                        class="img-fluid rounded-4 shadow-sm mb-4 w-100"
+                    />
+                    <!-- Simple illustrative block -->
+                    <div class="p-4 p-md-5 rounded-4 border bg-white shadow-sm">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-circle me-3">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0" data-i18n="hero_feat1_title">Secure infrastructure</h5>
+                                <small class="text-muted" data-i18n="hero_feat1_text">
+                                    Networks, servers, and backups designed for reliability.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-circle me-3">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0" data-i18n="hero_feat2_title">Custom applications</h5>
+                                <small class="text-muted" data-i18n="hero_feat2_text">
+                                    Software built around your workflow.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="icon-circle me-3">
+                                <i class="bi bi-globe2"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0" data-i18n="hero_feat3_title">Online presence</h5>
+                                <small class="text-muted" data-i18n="hero_feat3_text">
+                                    Websites and campaigns that bring you clients.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <section id="services" class="scroll-offset">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="services_title">Services</h2>
+                <p class="section-subtitle mx-auto" data-i18n="services_subtitle">
+                    End‑to‑end technology services: from infrastructure and custom
+                    software to your online presence.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Application Development -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-circle mb-3">
+                                <i class="bi bi-window-sidebar"></i>
+                            </div>
+                            <h5 class="card-title" data-i18n="svc1_title">Application Development</h5>
+                            <p class="card-text text-muted" data-i18n="svc1_text">
+                                Custom software built around your business, not the other
+                                way around.
+                            </p>
+                            <ul class="list-unstyled small mb-4">
+                                <li data-i18n="svc1_li1">• Desktop &amp; web applications</li>
+                                <li data-i18n="svc1_li2">• e‑Commerce platforms</li>
+                                <li data-i18n="svc1_li3">• System integration &amp; APIs</li>
+                                <li data-i18n="svc1_li4">• Long‑term maintenance</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary btn-sm" data-i18n="svc1_cta">
+                                Start a project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Solutions -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card service-card-ai h-100">
+                        <div class="card-body p-4 position-relative">
+                            <span class="badge ai-new-badge mb-3" data-i18n="svc2_badge">Now Offering</span>
+                            <div class="icon-circle icon-circle-ai mb-3">
+                                <i class="bi bi-robot"></i>
+                            </div>
+                            <h5 class="card-title" data-i18n="svc2_title">AI Solutions</h5>
+                            <p class="card-text text-muted" data-i18n="svc2_text">
+                                Bring AI into your business — from smart applications to
+                                process automation and strategic adoption.
+                            </p>
+                            <ul class="list-unstyled small mb-4">
+                                <li data-i18n="svc2_li1">• AI-powered application development</li>
+                                <li data-i18n="svc2_li2">• Business process automation</li>
+                                <li data-i18n="svc2_li3">• AI tool integration &amp; consulting</li>
+                                <li data-i18n="svc2_li4">• Practical AI adoption for SMBs</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-ai btn-sm" data-i18n="svc2_cta">
+                                Explore AI for your business
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internet Solutions -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-circle mb-3">
+                                <i class="bi bi-broadcast-pin"></i>
+                            </div>
+                            <h5 class="card-title" data-i18n="svc3_title">Internet Solutions</h5>
+                            <p class="card-text text-muted" data-i18n="svc3_text">
+                                Grow your online presence with modern websites and targeted
+                                digital campaigns.
+                            </p>
+                            <ul class="list-unstyled small mb-4">
+                                <li data-i18n="svc3_li1">• Website design &amp; development</li>
+                                <li data-i18n="svc3_li2">• Google Ads campaigns</li>
+                                <li data-i18n="svc3_li3">• Online media &amp; digital marketing</li>
+                                <li data-i18n="svc3_li4">• Analytics &amp; optimization</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary btn-sm" data-i18n="svc3_cta">
+                                Plan your online strategy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IT Solutions -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-circle mb-3">
+                                <i class="bi bi-hdd-network"></i>
+                            </div>
+                            <h5 class="card-title" data-i18n="svc4_title">IT Solutions</h5>
+                            <p class="card-text text-muted" data-i18n="svc4_text">
+                                Keep your business running with secure, scalable, and
+                                well‑maintained IT infrastructure.
+                            </p>
+                            <ul class="list-unstyled small mb-4">
+                                <li data-i18n="svc4_li1">• Network design &amp; installation</li>
+                                <li data-i18n="svc4_li2">• Server setup &amp; virtualization</li>
+                                <li data-i18n="svc4_li3">• Technical support &amp; troubleshooting</li>
+                                <li data-i18n="svc4_li4">• Backup &amp; disaster recovery</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-primary btn-sm" data-i18n="svc4_cta">
+                                Discuss your IT needs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why" class="bg-light scroll-offset">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title" data-i18n="why_title">Why choose INFINET</h2>
+                    <p class="section-subtitle" data-i18n="why_subtitle">
+                        A technology partner focused on reliability, clarity, and long‑term
+                        collaboration.
+                    </p>
+
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-award"></i></div>
+                        <div>
+                            <h6 class="mb-1" data-i18n="why1_title">30+ years of experience</h6>
+                            <p class="mb-0 small text-muted" data-i18n="why1_text">
+                                We've been designing and supporting IT systems for businesses
+                                in Greece since 1996.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-lightning-charge"></i></div>
+                        <div>
+                            <h6 class="mb-1" data-i18n="why2_title">Fast, reliable support</h6>
+                            <p class="mb-0 small text-muted" data-i18n="why2_text">
+                                When something breaks, you get a real person who understands
+                                your environment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-people"></i></div>
+                        <div>
+                            <h6 class="mb-1" data-i18n="why3_title">Built for small &amp; medium businesses</h6>
+                            <p class="mb-0 small text-muted" data-i18n="why3_text">
+                                We design solutions that match your size, budget, and growth
+                                plans.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="why-item">
+                        <div class="why-icon"><i class="bi bi-diagram-3"></i></div>
+                        <div>
+                            <h6 class="mb-1" data-i18n="why4_title">End‑to‑end services</h6>
+                            <p class="mb-0 small text-muted" data-i18n="why4_text">
+                                One partner for infrastructure, software, and online presence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+                            <h5 class="mb-3" data-i18n="why_card_title">What our clients value</h5>
+                            <ul class="list-unstyled small mb-0">
+                                <li data-i18n="why_card_li1">• Clear communication and realistic timelines</li>
+                                <li data-i18n="why_card_li2">• Practical solutions instead of unnecessary complexity</li>
+                                <li data-i18n="why_card_li3">• Long‑term support and incremental improvements</li>
+                                <li data-i18n="why_card_li4">• A partner who understands both tech and business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Case Studies -->
+    <section id="projects" class="scroll-offset">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="cs_title">Case Studies</h2>
+                <p class="section-subtitle mx-auto" data-i18n="cs_subtitle">
+                    How we've helped businesses modernize their
+                    infrastructure and digital presence.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card h-100">
+                        <div class="project-card-banner bg-primary-subtle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-database-lock text-primary"></i>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title" data-i18n="cs1_title">National CODIS DNA Database</h5>
+                            <p class="small text-primary fw-semibold mb-2" data-i18n="cs1_tags">
+                                Forensic IT • Database Management • Ongoing Support
+                            </p>
+                            <p class="card-text small text-muted" data-i18n="cs1_text">
+                                Delivery and long-term maintenance of the national CODIS DNA
+                                database system, supporting law enforcement agencies with
+                                reliable, secure, and compliant infrastructure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card h-100">
+                        <div class="project-card-banner bg-success-subtle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-capsule text-success"></i>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title" data-i18n="cs2_title">Production Line Management System</h5>
+                            <p class="small text-success fw-semibold mb-2" data-i18n="cs2_tags">
+                                Custom Software • Workflow Automation
+                            </p>
+                            <p class="card-text small text-muted" data-i18n="cs2_text">
+                                A tailored application for a dermopharmaceutical company to
+                                organise, track, and optimise their production line — replacing
+                                manual processes with a structured, auditable workflow.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card h-100">
+                        <div class="project-card-banner bg-warning-subtle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-envelope-paper text-warning"></i>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title" data-i18n="cs3_title">Smart Email Management Tool</h5>
+                            <p class="small text-warning fw-semibold mb-2" data-i18n="cs3_tags">
+                                Custom Outlook Add-in • Productivity
+                            </p>
+                            <p class="card-text small text-muted" data-i18n="cs3_text">
+                                A custom Microsoft Outlook application for organising, archiving,
+                                and following up on emails — giving teams a structured way to
+                                manage correspondence and never miss a follow-up.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="small text-muted mb-2" data-i18n="cs_more_text">
+                    Want to see more examples relevant to your industry?
+                </p>
+                <a href="#contact" class="btn btn-outline-primary btn-sm" data-i18n="cs_more_cta">
+                    Ask for case studies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-light scroll-offset">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title" data-i18n="about_title">About INFINET</h2>
+                    <p class="section-subtitle" data-i18n="about_subtitle">
+                        A technology partner for businesses that need reliable IT
+                        infrastructure, custom software, and effective online solutions.
+                    </p>
+                    <p data-i18n="about_body">
+                        Since 1996, we've helped companies across Greece modernise their
+                        operations, secure their data, and build a stronger digital presence.
+                        We combine deep technical expertise with a practical, business-first
+                        mindset — delivering solutions that are maintainable, understandable,
+                        and built for the long term.
+                    </p>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+                            <h6 class="text-uppercase text-muted small mb-3" data-i18n="about_glance">
+                                At a glance
+                            </h6>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div>
+                                    <div class="fw-bold">30+</div>
+                                    <small class="text-muted" data-i18n="about_stat1">Years in operation</small>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">150+</div>
+                                    <small class="text-muted" data-i18n="about_stat2">Clients served</small>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">End‑to‑end</div>
+                                    <small class="text-muted" data-i18n="about_stat3">From infrastructure to web</small>
+                                </div>
+                            </div>
+                            <p class="small text-muted mb-0" data-i18n="about_note">
+                                We prefer long‑term partnerships over one‑off projects, and we
+                                value clear communication as much as technical quality.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="scroll-offset">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6">
+                    <h2 class="section-title" data-i18n="contact_title">Let's talk about your next step</h2>
+                    <p class="section-subtitle" data-i18n="contact_subtitle">
+                        Tell us a bit about your business and what you're looking for. We'll
+                        get back to you with practical options, not generic pitches.
+                    </p>
+
+                    <div class="mt-4">
+                        <p class="mb-1">
+                            <i class="bi bi-telephone me-2 text-primary"></i>
+                            <strong data-i18n="contact_phone_label">Phone:</strong> +30 2295 306595
+                        </p>
+                        <p class="mb-1">
+                            <i class="bi bi-phone me-2 text-primary"></i>
+                            <strong data-i18n="contact_mobile_label">Mobile:</strong> +30 6932 641441
+                        </p>
+                        <p class="mb-1">
+                            <i class="bi bi-envelope me-2 text-primary"></i>
+                            <strong data-i18n="contact_email_label">Email:</strong> info@infinet.gr
+                        </p>
+                        <p class="mb-0">
+                            <i class="bi bi-geo-alt me-2 text-primary"></i>
+                            <strong data-i18n="contact_location_label">Location:</strong>
+                            <span data-i18n="contact_location_value">Afidnes, Attica, Greece</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card contact-card">
+                        <div class="card-body p-4">
+                            <h5 class="mb-3" data-i18n="contact_form_title">Send us a message</h5>
+                            <form id="contact-form">
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact_name_label">Name</label>
+                                    <input
+                                        type="text"
+                                        id="from_name"
+                                        name="from_name"
+                                        class="form-control"
+                                        data-i18n-placeholder="contact_name_placeholder"
+                                        placeholder="Your name"
+                                        required
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact_email_field_label">Email</label>
+                                    <input
+                                        type="email"
+                                        id="from_email"
+                                        name="from_email"
+                                        class="form-control"
+                                        placeholder="you@example.com"
+                                        required
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact_company_label">Company</label>
+                                    <input
+                                        type="text"
+                                        id="company"
+                                        name="company"
+                                        class="form-control"
+                                        data-i18n-placeholder="contact_company_placeholder"
+                                        placeholder="Company name (optional)"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" data-i18n="contact_message_label">How can we help?</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        class="form-control"
+                                        rows="4"
+                                        data-i18n-placeholder="contact_message_placeholder"
+                                        placeholder="Briefly describe your needs (IT, development, website, etc.)"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button type="submit" id="submit-btn" class="btn btn-primary w-100" data-i18n="contact_submit">
+                                    Send message
+                                </button>
+                                <p id="form-status" class="small mt-2 mb-0"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h6 class="mb-3">INFINET IT Solutions</h6>
+                    <p class="small mb-0" data-i18n="footer_tagline">
+                        Reliable IT, development, and internet solutions for businesses in
+                        Greece.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="mb-3" data-i18n="footer_links_title">Quick links</h6>
+                    <ul class="list-unstyled small mb-0">
+                        <li><a href="#services" data-i18n="footer_link_services">Services</a></li>
+                        <li><a href="#projects" data-i18n="footer_link_projects">Projects</a></li>
+                        <li><a href="#about" data-i18n="footer_link_about">About</a></li>
+                        <li><a href="#contact" data-i18n="footer_link_contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="mb-3" data-i18n="footer_legal_title">Legal</h6>
+                    <ul class="list-unstyled small mb-0">
+                        <li><a href="#" data-i18n="footer_privacy">Privacy policy</a></li>
+                        <li><a href="#" data-i18n="footer_terms">Terms of service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary-subtle my-3" />
+            <div class="small">
+                <span>© <span id="year"></span> <span data-i18n="footer_copy">INFINET. All rights reserved.</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Translations -->
+    <script src="Scripts/translations.js"></script>
+
+    <!-- Main JS -->
+    <script src="Scripts/index.js"></script>
+</body>
+</html>
