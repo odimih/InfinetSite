@@ -9,20 +9,24 @@ const translations = {
         nav_cta: "Get in touch",
 
         // Hero
-        hero_badge: "Software • AI • Web • IT",
-        hero_title: "IT, Software & Web Solutions for Business.",
-        hero_subtitle: "We design, build, and support secure IT infrastructure, custom software, and online solutions — so your business runs without interruption and grows on solid ground. We also help businesses adopt AI tools and build smarter, AI-powered applications.",
+        hero_badge: "AI‑Driven Apps • Web Systems • IT & Business Hardware",
+        hero_title: "AI‑Powered Applications & Business IT Solutions",
+        hero_subtitle: "We design and build custom software that uses AI to automate work, improve decisions, and modernize your operations backed by reliable IT infrastructure and high‑quality business hardware.",
         hero_trust: "Trusted by businesses in Greece since 1996.",
         hero_cta_primary: "Contact our team",
         hero_cta_secondary: "Explore services",
+        hero_bullet1: "Custom AI‑powered applications",
+        hero_bullet2: "Business automation & workflow systems",
+        hero_bullet3: "Secure networks, servers & support",
+        hero_bullet4: "High‑quality hardware for professional use",
 
         // Hero feature block
         hero_feat1_title: "Secure infrastructure",
-        hero_feat1_text: "Networks, servers, and backups designed for reliability.",
+        hero_feat1_text: "Reliable networks, servers, and backups — ready for AI‑powered systems.",
         hero_feat2_title: "Custom applications",
-        hero_feat2_text: "Software built around your workflow.",
+        hero_feat2_text: "Software built around your workflow, enhanced with practical AI.",
         hero_feat3_title: "Online presence",
-        hero_feat3_text: "Websites and campaigns that bring you clients.",
+        hero_feat3_text: "Fast, modern websites and campaigns that bring you clients.",
 
         // Services
         services_title: "Services",
@@ -147,20 +151,24 @@ const translations = {
         nav_cta: "Επικοινωνήστε",
 
         // Hero
-        hero_badge: "Λογισμικό • ΑΙ • Web • IT",
-        hero_title: "Λύσεις IT, Λογισμικού & Web για Επιχειρήσεις.",
-        hero_subtitle: "Σχεδιάζουμε, αναπτύσσουμε και υποστηρίζουμε ασφαλή IT υποδομή, προσαρμοσμένο λογισμικό και διαδικτυακές λύσεις — ώστε η επιχείρησή σας να λειτουργεί αδιάλειπτα και να αναπτύσσεται σε σταθερές βάσεις. Βοηθάμε επίσης επιχειρήσεις να υιοθετήσουν εργαλεία ΑΙ και να αναπτύξουν έξυπνες εφαρμογές τεχνητής νοημοσύνης.",
+        hero_badge: "Εφαρμογές ΤΝ • Web Συστήματα • IT & Επαγγελματικό Hardware",
+        hero_title: "Εφαρμογές με Τεχνητή Νοημοσύνη & Λύσεις IT για Επιχειρήσεις",
+        hero_subtitle: "Σχεδιάζουμε και αναπτύσσουμε προσαρμοσμένο λογισμικό που χρησιμοποιεί ΤΝ για να αυτοματοποιεί εργασίες, να βελτιώνει αποφάσεις και να εκσυγχρονίζει τις λειτουργίες σας — υποστηριζόμενο από αξιόπιστη IT υποδομή και επαγγελματικό hardware.",
         hero_trust: "Αξιόπιστος συνεργάτης επιχειρήσεων στην Ελλάδα από το 1996.",
         hero_cta_primary: "Επικοινωνήστε μαζί μας",
         hero_cta_secondary: "Δείτε τις υπηρεσίες",
+        hero_bullet1: "Προσαρμοσμένες εφαρμογές με ΤΝ",
+        hero_bullet2: "Αυτοματισμός εργασιών & συστήματα ροής εργασίας",
+        hero_bullet3: "Ασφαλή δίκτυα, servers & υποστήριξη",
+        hero_bullet4: "Επαγγελματικό hardware υψηλής ποιότητας",
 
         // Hero feature block
         hero_feat1_title: "Ασφαλής υποδομή",
-        hero_feat1_text: "Δίκτυα, servers και backups σχεδιασμένα για αξιοπιστία.",
+        hero_feat1_text: "Αξιόπιστα δίκτυα, servers και backups — έτοιμα για συστήματα με ΤΝ.",
         hero_feat2_title: "Προσαρμοσμένες εφαρμογές",
-        hero_feat2_text: "Λογισμικό φτιαγμένο γύρω από τη ροή εργασίας σας.",
+        hero_feat2_text: "Λογισμικό φτιαγμένο γύρω από τη ροή εργασίας σας, ενισχυμένο με πρακτική ΤΝ.",
         hero_feat3_title: "Διαδικτυακή παρουσία",
-        hero_feat3_text: "Ιστοσελίδες και καμπάνιες που φέρνουν πελάτες.",
+        hero_feat3_text: "Γρήγορες, σύγχρονες ιστοσελίδες και καμπάνιες που φέρνουν πελάτες.",
 
         // Services
         services_title: "Υπηρεσίες",
