@@ -202,3 +202,7 @@ footer a:hover {
 .scroll-offset {
     scroll-margin-top: 88px;
 }
+
+p {
+    line-height: 1.6;
+}
