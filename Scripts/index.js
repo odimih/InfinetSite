@@ -66,7 +66,9 @@ function setLanguage(lang) {
 
     // Update dropdown toggle label
     const toggle = document.getElementById("langDropdown");
-    toggle.textContent = lang === "en" ? "🇬🇧 EN" : "🇬🇷 ΕΛ";
+    const code = lang === "en" ? "gb" : "gr";
+    const label = lang === "en" ? "EN" : "ΕΛ";
+    toggle.innerHTML = `<span class="fi fi-${code} me-1"></span> ${label}`;
 
     // Update active state on items
     document.getElementById("lang-en").classList.toggle("active", lang === "en");
