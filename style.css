@@ -228,3 +228,129 @@ footer a:hover {
 .scroll-offset {
     scroll-margin-top: 88px;
 }
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    border: 1.5px solid #dee2e6;
+    background: transparent;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
+    color: #212121;
+    line-height: 1;
+    border-radius: 6px;
+}
+
+.dark-mode-toggle:hover {
+    background: #f5f7fa;
+    border-color: #bbb;
+    color: #212121;
+}
+
+/* ─── Dark mode overrides ─────────────────────────────────────── */
+
+/* Fix body text — the hardcoded --text-dark overrides Bootstrap's dark theme */
+[data-bs-theme="dark"] body {
+    color: var(--bs-body-color);
+}
+
+/* Navbar */
+[data-bs-theme="dark"] .navbar.bg-white {
+    background-color: #0f172a !important;
+}
+
+[data-bs-theme="dark"] .navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+/* Hero */
+[data-bs-theme="dark"] .hero {
+    background:
+        linear-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.18) 1px, transparent 1px),
+        linear-gradient(135deg, #0f172a, #0d1b2e, #0a1628);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+}
+
+[data-bs-theme="dark"] .hero .bg-white {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-bs-theme="dark"] .hero-subtitle {
+    color: #94a3b8;
+}
+
+/* Section text */
+[data-bs-theme="dark"] .section-subtitle {
+    color: #94a3b8;
+}
+
+/* bg-light sections (Why Us, About) — Bootstrap's bg-light doesn't adapt to dark mode */
+[data-bs-theme="dark"] section.bg-light {
+    background-color: #172238 !important;
+}
+
+/* Cards — make shadows visible on dark surfaces */
+[data-bs-theme="dark"] .service-card,
+[data-bs-theme="dark"] .project-card,
+[data-bs-theme="dark"] .contact-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* AI service card — replace the hardcoded white gradient */
+[data-bs-theme="dark"] .service-card-ai {
+    background: linear-gradient(135deg, #0e2952, #1a4a8a) !important;
+    border-color: rgba(30, 136, 229, 0.6) !important;
+}
+
+/* Icon circles */
+[data-bs-theme="dark"] .icon-circle {
+    background: rgba(30, 136, 229, 0.18);
+}
+
+[data-bs-theme="dark"] .icon-circle-ai {
+    background: rgba(124, 58, 237, 0.25);
+    color: #b57bee;
+}
+
+/* Why icons */
+[data-bs-theme="dark"] .why-icon {
+    background: rgba(30, 136, 229, 0.18);
+    color: #60a5fa;
+}
+
+/* Language switcher */
+[data-bs-theme="dark"] .lang-dropdown-toggle {
+    color: #e2e8f0;
+    border-color: #334155;
+}
+
+[data-bs-theme="dark"] .lang-dropdown-toggle:hover {
+    background: #1e293b;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+/* AI card CTA button */
+[data-bs-theme="dark"] .btn-outline-ai {
+    color: #93c5fd;
+    border-color: #93c5fd;
+}
+
+[data-bs-theme="dark"] .btn-outline-ai:hover {
+    background: #93c5fd;
+    color: #0e2952;
+    border-color: #93c5fd;
+}
+
+/* Dark mode toggle button */
+[data-bs-theme="dark"] .dark-mode-toggle {
+    color: #e2e8f0;
+    border-color: #334155;
+}
+
+[data-bs-theme="dark"] .dark-mode-toggle:hover {
+    background: #1e293b;
+    border-color: #475569;
+    color: #e2e8f0;
+}

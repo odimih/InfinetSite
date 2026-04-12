@@ -86,3 +86,41 @@ document.getElementById("lang-el").addEventListener("click", function () {
 // Apply saved language on load — always default to English for new visitors
 const savedLang = localStorage.getItem("lang") || "en";
 setLanguage(savedLang);
+
+// Dark mode
+const darkModeToggle = document.getElementById("darkModeToggle");
+const darkModeIcon = document.getElementById("darkModeIcon");
+
+function setDarkMode(enabled) {
+    if (enabled) {
+        document.documentElement.setAttribute("data-bs-theme", "dark");
+        darkModeIcon.className = "bi bi-sun";
+        localStorage.setItem("darkMode", "on");
+    } else {
+        document.documentElement.removeAttribute("data-bs-theme");
+        darkModeIcon.className = "bi bi-moon";
+        localStorage.setItem("darkMode", "off");
+    }
+}
+
+darkModeToggle.addEventListener("click", function () {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    setDarkMode(!isDark);
+});
+
+// Apply dark mode on load:
+// - use saved preference if the user has manually toggled before
+// - otherwise follow the system setting
+const savedDarkMode = localStorage.getItem("darkMode");
+if (savedDarkMode !== null) {
+    setDarkMode(savedDarkMode === "on");
+} else {
+    setDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+}
+
+// React to OS theme changes in real time, but only if the user hasn't set a manual preference
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+    if (localStorage.getItem("darkMode") === null) {
+        setDarkMode(e.matches);
+    }
+});
