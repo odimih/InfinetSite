@@ -4,12 +4,19 @@ document.getElementById("year").textContent = new Date().getFullYear();
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
         const targetId = this.getAttribute("href");
-        if (targetId.length > 1) {
+
+        // Placeholder links (footer Privacy / Terms) have no page yet — swallow
+        // the click so the browser doesn't jump to the top and dirty the URL.
+        if (targetId === "#") {
             e.preventDefault();
-            document
-                .querySelector(targetId)
-                .scrollIntoView({ behavior: "smooth" });
+            return;
         }
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
     });
 });
 
@@ -64,6 +71,18 @@ function setLanguage(lang) {
         if (t[key] !== undefined) el.placeholder = t[key];
     });
 
+    // Swap meta content (description)
+    document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-content");
+        if (t[key] !== undefined) el.setAttribute("content", t[key]);
+    });
+
+    // Swap accessible labels
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-aria-label");
+        if (t[key] !== undefined) el.setAttribute("aria-label", t[key]);
+    });
+
     // Update dropdown toggle label
     const toggle = document.getElementById("langDropdown");
     const code = lang === "en" ? "gb" : "gr";
@@ -91,21 +110,24 @@ setLanguage(savedLang);
 const darkModeToggle = document.getElementById("darkModeToggle");
 const darkModeIcon = document.getElementById("darkModeIcon");
 
-function setDarkMode(enabled) {
+// `persist` must stay false for anything that isn't an explicit user toggle —
+// writing to localStorage is what marks a manual preference, and a manual
+// preference permanently stops the site from following the OS theme.
+function setDarkMode(enabled, persist) {
     if (enabled) {
         document.documentElement.setAttribute("data-bs-theme", "dark");
         darkModeIcon.className = "bi bi-sun";
-        localStorage.setItem("darkMode", "on");
     } else {
         document.documentElement.removeAttribute("data-bs-theme");
         darkModeIcon.className = "bi bi-moon";
-        localStorage.setItem("darkMode", "off");
     }
+
+    if (persist) localStorage.setItem("darkMode", enabled ? "on" : "off");
 }
 
 darkModeToggle.addEventListener("click", function () {
     const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
-    setDarkMode(!isDark);
+    setDarkMode(!isDark, true);
 });
 
 // Apply dark mode on load:
@@ -113,14 +135,14 @@ darkModeToggle.addEventListener("click", function () {
 // - otherwise follow the system setting
 const savedDarkMode = localStorage.getItem("darkMode");
 if (savedDarkMode !== null) {
-    setDarkMode(savedDarkMode === "on");
+    setDarkMode(savedDarkMode === "on", false);
 } else {
-    setDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches, false);
 }
 
 // React to OS theme changes in real time, but only if the user hasn't set a manual preference
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
     if (localStorage.getItem("darkMode") === null) {
-        setDarkMode(e.matches);
+        setDarkMode(e.matches, false);
     }
 });

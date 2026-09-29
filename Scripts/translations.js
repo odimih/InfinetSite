@@ -1,6 +1,12 @@
 const translations = {
     en: {
+        // Meta
+        meta_title: "INFINET IT Solutions — AI‑Powered Applications & Business IT",
+        meta_description: "INFINET IT Solutions builds AI‑powered applications, custom software, web systems and reliable IT infrastructure for businesses in Greece. In business since 1996.",
+
         // Navbar
+        nav_toggle_label: "Toggle navigation",
+        darkmode_label: "Toggle dark mode",
         nav_services: "Services",
         nav_why: "Why us",
         nav_projects: "Case Studies",
@@ -142,7 +148,13 @@ const translations = {
     },
 
     el: {
+        // Meta
+        meta_title: "INFINET IT Solutions — Εφαρμογές με Τεχνητή Νοημοσύνη & Επιχειρηματική Πληροφορική",
+        meta_description: "Η INFINET IT Solutions αναπτύσσει εφαρμογές με τεχνητή νοημοσύνη, εξειδικευμένο λογισμικό, διαδικτυακά συστήματα και αξιόπιστες υποδομές πληροφορικής για επιχειρήσεις στην Ελλάδα. Από το 1996.",
+
         // Navbar
+        nav_toggle_label: "Εναλλαγή πλοήγησης",
+        darkmode_label: "Εναλλαγή σκοτεινού θέματος",
         nav_services: "Υπηρεσίες",
         nav_why: "Γιατί εμάς",
         nav_projects: "Έργα",
