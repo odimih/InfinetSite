@@ -161,6 +161,31 @@ for services clients — a published product is the one thing a prospect can go 
 - **Register:** this is the only B2C moment on an otherwise entirely B2B page. Keep the pitch to a
   short paragraph and let ItemAtlas's own site do the selling — don't reproduce its marketing here.
 
+### Navbar
+
+The new link is **"Products" / "Προϊόντα"**, placed second, right after Services — nav order has to
+mirror DOM order on a single-page site, and `#apps` sits after `#services`. Final order: Services,
+Products, Why us, Case Studies, About. "Our Apps" was rejected because Greek renders it
+"Οι εφαρμογές μας", roughly twice the width; bare "Apps" collides with the app-development service.
+
+**A fifth link fits — measured, not assumed.** The logo renders at 202×62 (400×123 source), leaving the
+right-hand group about 734px inside the `lg` container. The current group costs roughly 543px in
+English and 527px in Greek, and a fifth link costs about 76px, so English lands near 619px with
+~115px spare. **English is the worst case, not Greek**, because EL `nav_projects` is "Έργα" (4 chars)
+against EN "Case Studies" (12). Those are character-width estimates with perhaps 15% error, so
+verify at exactly 992px rather than trusting the arithmetic. Below `lg` the menu collapses to the
+stacked hamburger, where extra items are free.
+
+**Do not free space by changing navbar height or logo size.** That ripples through
+`body { padding-top }` (76px / 90px), `.scroll-offset` (88px) and the navbar's own 0.6rem padding,
+per the convention above — a three-place change for a problem that measurement says doesn't exist.
+
+If verification does show it's tighter than calculated, the fallback ladder in cost order is:
+rename EN nav "Case Studies" → "Projects" (−45px); shorten the EN CTA "Get in touch" → "Contact"
+(−40px, and Greek already says "Επικοινωνία", so it would align the two languages and revive the dead
+`nav_contact` key); drop "Why us" from the nav while keeping the section; switch to
+`navbar-expand-xl`; make the language toggle icon-only (−20px).
+
 ### Screenshot theme swap
 
 ItemAtlas supports dark mode, so ship light *and* dark screenshots and swap them with the theme
@@ -208,6 +233,12 @@ and possibly a stronger bridge to the services business than the consumer app is
   smooth-scroll handler now swallows the click so they no longer jump to the top and leave a bare `#`
   in the URL, but they are inert placeholders.
 - `nav_contact` exists in both language blocks and is referenced nowhere in the markup — dead key.
+  It holds exactly "Contact" / "Επικοινωνία", so it is worth reviving rather than deleting if the CTA
+  label is ever shortened.
+- The Case Studies section is labelled per-language rather than identically across languages: English
+  says "Case Studies" in nav, heading and footer; Greek says "Έργα" (Projects) in all three. Each
+  language is internally consistent, which is what matters — the literal Greek, "Μελέτες
+  περίπτωσης", is 18 characters and would break the navbar.
 - No sitemap or `robots.txt`. Only worth adding if the site ever grows past one page.
 - `og:image` is the logo, so social shares render a small `summary` card. A 1200×630 share image would
   justify upgrading to `summary_large_image`.

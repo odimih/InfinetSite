@@ -138,7 +138,7 @@ const translations = {
         footer_tagline: "Reliable IT, software development, and internet solutions for businesses.",
         footer_links_title: "Quick links",
         footer_link_services: "Services",
-        footer_link_projects: "Projects",
+        footer_link_projects: "Case Studies",
         footer_link_about: "About",
         footer_link_contact: "Contact",
         footer_legal_title: "Legal",
