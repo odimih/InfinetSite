@@ -134,12 +134,22 @@ Submit handler disables the button, shows a localised sending/success/error mess
 
 ## Deploying
 
-Static hosting served straight from the repo root — `index.html` sits at the site root, and
-`Images/`, `Scripts/` and `style.css` are referenced by relative path. There is no CI, no build and
-no deploy script: pushing `main` is the release.
+Static hosting — `index.html` sits at the site root, and `Images/`, `Scripts/` and `style.css` are
+referenced by relative path. There is no CI, no build and no deploy script.
 
-Because of that, **`main` is production**. Verify a change by opening `index.html` locally, in both
-themes and both languages, before pushing.
+**The repo is not connected to the host. The site is uploaded manually, so pushing is not the
+release — uploading is.** Pushing `main` is version control and nothing more; it publishes nothing
+and is safe at any time, including for work that is not meant to be live yet.
+
+Two things follow:
+
+- **`main` and production can diverge.** What is live is whatever was last uploaded, which is not
+  necessarily what `main` holds. Do not infer the live state from the repo.
+- **The gate is the upload, not the commit.** Verify a change by opening `index.html` locally, in
+  both themes and both languages, before *uploading* it.
+
+Upload **additively**. `/itematlas3d/` lives on the host but not in this repo, so anything that
+mirrors or syncs the repo onto the web root rather than copying over it would delete that page.
 
 ## Planned: own-products section (`#apps`)
 
@@ -162,14 +172,13 @@ incomplete, which is the central constraint on how the section presents its down
 
 ### Release workflow — read before writing any app copy
 
-The site is amended **locally** and stays unpushed until the apps are actually published. Copy is
-therefore written in the present tense, as though the apps are live, even while they are not; the
-store URLs are filled in once the listings exist and before the site is uploaded. Nothing in this
-plan reaches production early, so "it is not true yet" is not a reason to soften the wording.
+The work is committed and pushed as normal, and simply **not uploaded** until the apps are actually
+published. Copy is therefore written in the present tense, as though the apps are live, even while
+they are not; the store URLs are filled in once the listings exist and before the site is uploaded.
 
-This cuts against `main` being production: the usual rule is that pushing is the release, and here
-the release is deliberately held. **Do not push app-related copy until the apps are live**, whatever
-state the working tree is in.
+Because deployment is a manual upload (see Deploying above), none of this reaches production early,
+so **"it is not true yet" is not a reason to soften the wording** — and committing or pushing it is
+not a reason for alarm either. The only step that must wait is the upload.
 
 **ItemAtlas3D has its own site, built separately and with its own theme, but it is served from this
 same domain at `https://infinet.gr/itematlas3d/`.** It is not in this repo and never has been — check
