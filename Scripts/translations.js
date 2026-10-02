@@ -15,7 +15,8 @@ const translations = {
         nav_cta: "Get in touch",
 
         // Hero
-        hero_badge: "AI‑Driven Apps • Mobile & Web • IT & Business Hardware",
+        hero_badge_lead: "AI‑Driven Apps • Mobile & Web •",
+        hero_badge_tail: "IT & Business Hardware",
         hero_title: "AI‑Powered Applications & Business IT Solutions",
         hero_subtitle: "We design and build custom software that uses AI to automate work, improve decisions, and modernize your operations backed by reliable IT infrastructure and high‑quality business hardware.",
         hero_trust: "Trusted by businesses in Greece since 1996.",
@@ -163,8 +164,9 @@ const translations = {
         nav_cta: "Επικοινωνία",
 
         // Hero
-        hero_badge: "Εφαρμογές ΤΝ • Mobile & Web • IT & Επαγγελματικό Hardware",
-        hero_title: "Εφαρμογές με Τεχνητή Νοημοσύνη & Λύσεις IT για Επιχειρήσεις",
+        hero_badge_lead: "Εφαρμογές ΤΝ • Mobile & Web •",
+        hero_badge_tail: "IT & Επαγγελματικό Hardware",
+        hero_title: "Εφαρμογές & Λύσεις IT για επιχειρήσεις",
         hero_subtitle: "Σχεδιάζουμε και υλοποιούμε custom λογισμικό με ΤΝ που αυτοματοποιεί εργασίες, βελτιώνει τη λήψη αποφάσεων και εκσυγχρονίζει τις λειτουργίες της επιχείρησής σας χρησιμοποιόντας αξιόπιστη IT υποδομή και επαγγελματικό hardware.",
         hero_trust: "Αξιόπιστος συνεργάτης επιχειρήσεων στην Ελλάδα από το 1996.",
         hero_cta_primary: "Επικοινωνήστε μαζί μας",

@@ -54,6 +54,20 @@ Open Graph and Twitter tags are deliberately **not** translated: crawlers read t
 runs, so swapping them client-side changes nothing a crawler sees and only desyncs the DOM from what
 was scraped. They stay English, with `og:locale:alternate` advertising the Greek version.
 
+Because `data-i18n` sets `textContent`, it cannot go on an element that wraps part of its text in a
+child element — the swap would delete the child. The hero badge hits this: its tail sits in
+`<span class="hero-badge-break">`, which goes `display: block` at narrow widths. It is therefore
+split into `hero_badge_lead` and `hero_badge_tail`, one key per child span, with the outer element
+carrying no attribute at all. **Don't collapse those two keys back into one**; doing so either kills
+the responsive line break or silently unwires the badge.
+
+That is how the badge and `hero_title` were both left untranslated for a long time — the keys existed
+in both languages and nothing in the markup referenced them, so `setLanguage` never saw them and the
+hardcoded English stayed on screen. A parity check between `en` and `el` does not catch this; the
+check that does is the reverse one, for keys that exist in the table but appear in no `data-i18n*`
+attribute. `nav_contact` is the only one left, and the three `contact_*` status strings are read
+directly by `index.js` rather than from markup, so they are expected to be absent.
+
 Choice is persisted in `localStorage["lang"]`; **new visitors always get English**, regardless of
 browser locale. This is deliberate — don't "improve" it to sniff `navigator.language`.
 
