@@ -2,7 +2,7 @@ const translations = {
     en: {
         // Meta
         meta_title: "INFINET IT Solutions — AI‑Powered Applications & Business IT",
-        meta_description: "INFINET IT Solutions builds AI‑powered applications, custom software, web systems and reliable IT infrastructure for businesses in Greece. In business since 1996.",
+        meta_description: "INFINET IT Solutions builds AI‑powered mobile, web and desktop software, plus reliable IT infrastructure, for businesses in Greece. In business since 1996.",
 
         // Navbar
         nav_toggle_label: "Toggle navigation",
@@ -15,7 +15,7 @@ const translations = {
         nav_cta: "Get in touch",
 
         // Hero
-        hero_badge: "AI‑Driven Apps • Web Systems • IT & Business Hardware",
+        hero_badge: "AI‑Driven Apps • Mobile & Web • IT & Business Hardware",
         hero_title: "AI‑Powered Applications & Business IT Solutions",
         hero_subtitle: "We design and build custom software that uses AI to automate work, improve decisions, and modernize your operations backed by reliable IT infrastructure and high‑quality business hardware.",
         hero_trust: "Trusted by businesses in Greece since 1996.",
@@ -40,10 +40,10 @@ const translations = {
 
         svc1_title: "Application Development",
         svc1_text: "Custom software built around your business, not the other way around.",
-        svc1_li1: "• Desktop & web applications",
+        svc1_li1: "• Mobile, desktop & web applications",
         svc1_li2: "• e‑Commerce platforms",
         svc1_li3: "• System integration & APIs",
-        svc1_li4: "• Long‑term maintenance",
+        svc1_li4: "• Store publishing & maintenance",
         svc1_cta: "Start a project",
 
         svc2_badge: "Now Offering",
@@ -106,7 +106,7 @@ const translations = {
         // About
         about_title: "About INFINET",
         about_subtitle: "A technology partner for businesses that need reliable IT infrastructure, custom software, and modern digital solutions.",
-        about_body: "Since 1996, we've helped companies across Greece modernise their operations, secure their data, and build a stronger digital presence. We combine deep technical expertise with a practical, business-first mindset — delivering solutions that are maintainable, understandable, and built for the long term.",
+        about_body: "Since 1996, we've helped companies across Greece modernise their operations, secure their data, and build a stronger digital presence. We combine deep technical expertise with a practical, business-first mindset — delivering solutions that are maintainable, understandable, and built for the long term. Alongside our client work, we now design and publish our own applications for desktop and mobile.",
         about_glance: "At a glance",
         about_stat1: "Years in operation",
         about_stat2: "Clients served",
@@ -150,7 +150,7 @@ const translations = {
     el: {
         // Meta
         meta_title: "INFINET IT Solutions — Εφαρμογές με Τεχνητή Νοημοσύνη & Επιχειρηματική Πληροφορική",
-        meta_description: "Η INFINET IT Solutions αναπτύσσει εφαρμογές με τεχνητή νοημοσύνη, εξειδικευμένο λογισμικό, διαδικτυακά συστήματα και αξιόπιστες υποδομές πληροφορικής για επιχειρήσεις στην Ελλάδα. Από το 1996.",
+        meta_description: "Η INFINET IT Solutions αναπτύσσει εφαρμογές mobile, web και desktop με τεχνητή νοημοσύνη, καθώς και αξιόπιστες υποδομές πληροφορικής για επιχειρήσεις στην Ελλάδα. Από το 1996.",
 
         // Navbar
         nav_toggle_label: "Εναλλαγή πλοήγησης",
@@ -163,7 +163,7 @@ const translations = {
         nav_cta: "Επικοινωνία",
 
         // Hero
-        hero_badge: "Εφαρμογές ΤΝ • Web Συστήματα • IT & Επαγγελματικό Hardware",
+        hero_badge: "Εφαρμογές ΤΝ • Mobile & Web • IT & Επαγγελματικό Hardware",
         hero_title: "Εφαρμογές με Τεχνητή Νοημοσύνη & Λύσεις IT για Επιχειρήσεις",
         hero_subtitle: "Σχεδιάζουμε και υλοποιούμε custom λογισμικό με ΤΝ που αυτοματοποιεί εργασίες, βελτιώνει τη λήψη αποφάσεων και εκσυγχρονίζει τις λειτουργίες της επιχείρησής σας χρησιμοποιόντας αξιόπιστη IT υποδομή και επαγγελματικό hardware.",
         hero_trust: "Αξιόπιστος συνεργάτης επιχειρήσεων στην Ελλάδα από το 1996.",
@@ -188,10 +188,10 @@ const translations = {
 
         svc1_title: "Ανάπτυξη Εφαρμογών",
         svc1_text: "Λογισμικό σχεδιασμένο για τις ανάγκες και τις ροές εργασίας της επιχείρησής σας.",
-        svc1_li1: "• Εφαρμογές web & desktop",
+        svc1_li1: "• Εφαρμογές mobile, web & desktop",
         svc1_li2: "• Πλατφόρμες e‑Commerce",
         svc1_li3: "• Ενοποίηση συστημάτων & APIs",
-        svc1_li4: "• Συνεχής συντήρηση & υποστήριξη",
+        svc1_li4: "• Δημοσίευση σε stores & συντήρηση",
         svc1_cta: "ΞΞεκινήστε μια νέα εφαρμογή",
 
         svc2_badge: "Νέα Υπηρεσία",
@@ -254,7 +254,7 @@ const translations = {
         // About
         about_title: "Σχετικά με την INFINET",
         about_subtitle: "Τεχνολογικός συνεργάτης για επιχειρήσεις που χρειάζονται αξιόπιστη IT υποδομή, custom εφαρμογές και σύγχρονες ψηφιακές λύσεις.",
-        about_body: "Από το 1996, βοηθάμε εταιρείες σε όλη την Ελλάδα να εκσυγχρονίσουν τις λειτουργίες τους, να προστατεύσουν τα δεδομένα τους και να ενισχύσουν την ψηφιακή τους παρουσία. Συνδυάζουμε βαθιά τεχνική εμπειρία με πρακτική, επιχειρηματοκεντρική προσέγγιση παρέχοντας λύσεις συντηρήσιμες, κατανοητές και έτοιμες για το μέλλον.",
+        about_body: "Από το 1996, βοηθάμε εταιρείες σε όλη την Ελλάδα να εκσυγχρονίσουν τις λειτουργίες τους, να προστατεύσουν τα δεδομένα τους και να ενισχύσουν την ψηφιακή τους παρουσία. Συνδυάζουμε βαθιά τεχνική εμπειρία με πρακτική, επιχειρηματοκεντρική προσέγγιση παρέχοντας λύσεις συντηρήσιμες, κατανοητές και έτοιμες για το μέλλον. Παράλληλα με τα έργα πελατών, σχεδιάζουμε και εκδίδουμε πλέον και δικές μας εφαρμογές για desktop και mobile.",
         about_glance: "Με μια ματιά",
         about_stat1: "Χρόνια λειτουργίας",
         about_stat2: "Πελάτες",

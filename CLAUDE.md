@@ -129,9 +129,33 @@ themes and both languages, before pushing.
 
 ## Planned: own-products section (`#apps`)
 
-INFINET is moving from services-only to also publishing its own mobile apps on Google Play and the
-App Store. The first is **ItemAtlas3D** — a consumer app, launching around 6 October 2026, with a
-business tier aimed at hospitality and short-term-rental platforms (Booking.com, Airbnb) to follow.
+INFINET is moving from services-only to also publishing its own **cross-platform** apps. The first is
+**ItemAtlas3D** — a 3D home and property inventory app (model your space, record what is stored
+where, then walk through it in 3D to find things). Consumer today, with a business tier aimed at
+hospitality and short-term-rental platforms (Booking.com, Airbnb) to follow.
+
+It ships on four platforms through three channels:
+
+| Platform | Channel |
+|---|---|
+| iOS | App Store |
+| macOS | App Store |
+| Android | Google Play |
+| Windows | Direct from the ItemAtlas site, paid through Stripe |
+
+**Windows has no store, so no badge exists for it.** Any badge row is therefore structurally
+incomplete, which is the central constraint on how the section presents its download options.
+
+### Release workflow — read before writing any app copy
+
+The site is amended **locally** and stays unpushed until the apps are actually published. Copy is
+therefore written in the present tense, as though the apps are live, even while they are not; the
+store URLs are filled in once the listings exist and before the site is uploaded. Nothing in this
+plan reaches production early, so "it is not true yet" is not a reason to soften the wording.
+
+This cuts against `main` being production: the usual rule is that pushing is the release, and here
+the release is deliberately held. **Do not push app-related copy until the apps are live**, whatever
+state the working tree is in.
 
 **ItemAtlas3D is a fully independent product with its own site, hosting and theme — nothing about it
 is served from this repo.** Its store-mandated privacy and support URLs live on the ItemAtlas side,
@@ -206,9 +230,15 @@ Official artwork from Apple and Google only, never recoloured, redrawn or resize
 brand rules. Both stores publish **Greek-localized variants**, worth using given the language
 switcher. Pick variants that survive both themes.
 
-ItemAtlas3D is not live at time of writing, so badges ship in a "launching soon" state and become
-real links in a one-line commit on launch day. Both URLs are obtainable in advance — Play from the
-package name, the App Store numeric ID from App Store Connect — so nothing needs hardcoding twice.
+Nothing is launched at time of writing, on any platform. Because the site stays local until the
+apps are live (see the release workflow above), the section is built with real copy and the URLs are
+filled in last, rather than shipping a "coming soon" state to production.
+
+**How the download options are presented is still undecided.** Three official badges plus a plain
+Windows link reads as one odd item out, and four channels of official artwork — each with Greek
+variants and both themes to survive — is a lot of maintenance for a promo block whose stated job is
+to hand off to the ItemAtlas site. The alternative under consideration is a single primary call to
+action pointing at that site, with a quiet platform line beneath it.
 
 ### Positioning copy this depends on
 
@@ -216,12 +246,19 @@ Mobile currently appears **nowhere** in the site's copy — `svc1_li1` offers "D
 applications" — so the section would otherwise arrive unannounced. This ships as its own commit,
 ahead of the section:
 
-1. `svc1` — add mobile/cross-platform apps and store publishing to the list.
+1. `svc1` — mobile added to `li1`, store publishing merged into `li4`. All four service cards carry
+   exactly four bullets, and the row is `col-md-6 col-lg-3` with `h-100` cards, so a fifth bullet
+   would have made this card taller than its three neighbours. Publishing joined maintenance instead
+   of becoming a fifth item.
 2. `about_body` — one clause: client work since 1996, own products now. About is the narrative home
    for a business-model shift; it doesn't need a section of its own.
-3. `meta_description` plus the OG and Twitter descriptions — add mobile apps.
-4. `hero_badge` — work "Mobile Apps" into the pipe-separated line. Light touch only; services pay
-   the bills and the hero is already dense.
+3. `meta_description` plus the OG and Twitter descriptions — mobile, web and desktop.
+4. `hero_badge` — "Web Systems" became "Mobile & Web" in both languages, keeping the line the same
+   length. Light touch only; services pay the bills and the hero is already dense.
+
+Product copy says **"for desktop and mobile"** rather than naming stores: the App Store covers both
+iOS and macOS, Google Play covers Android, and Windows is a direct sale, so no list of store names
+is both short and complete.
 
 Deferred until there is more than one app: an apps-published stat in the About "At a glance" block,
 and any dedicated treatment of the ItemAtlas business tier (B2B SaaS, a genuinely different pitch,
