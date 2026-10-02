@@ -171,10 +171,23 @@ This cuts against `main` being production: the usual rule is that pushing is the
 the release is deliberately held. **Do not push app-related copy until the apps are live**, whatever
 state the working tree is in.
 
-**ItemAtlas3D is a fully independent product with its own site, hosting and theme — nothing about it
-is served from this repo.** Its store-mandated privacy and support URLs live on the ItemAtlas side,
-so this site needs no new pages, no new routes and no new JavaScript. What belongs here is a promo
+**ItemAtlas3D has its own site, built separately and with its own theme, but it is served from this
+same domain at `https://infinet.gr/itematlas3d/`.** It is not in this repo and never has been — check
+`git log` if in doubt. Its store-mandated privacy and support URLs live on the ItemAtlas side, so
+this site needs no new pages, no new routes and no new JavaScript. What belongs here is a promo
 section that showcases it and houses every later app.
+
+Two consequences:
+
+- The promo link is the absolute `https://infinet.gr/itematlas3d/`, with no `target="_blank"` and no
+  `rel` — same origin, so a new tab is not warranted. It is absolute rather than root-relative
+  because `/itematlas3d` resolves to the filesystem root when `index.html` is opened as a `file://`
+  URL, which breaks the local check this project relies on to verify changes. `canonical` and the
+  Open Graph tags already hardcode the domain, so this is consistent. Use the apex host and keep the
+  trailing slash: `www` redirects to apex, and the page is a directory.
+- **`/itematlas3d` lives on the host but not in version control.** Any deploy that mirrors or syncs
+  this repo onto the web root rather than copying files over it would delete that page. Upload
+  additively.
 
 The section does double duty: it sells the app, and it is the site's strongest credibility exhibit
 for services clients — a published product is the one thing a prospect can go touch themselves.
@@ -185,10 +198,14 @@ for services clients — a published product is the one thing a prospect can go 
   consumer app to a commissioning client cold. A slim clickable teaser in the hero anchors down to
   it. (Directly after the hero was considered and rejected: it puts a consumer app ahead of any
   explanation of what the company does.)
-- **Layout:** a two-column featured block — framed screenshots one side, name, pitch, store badges
-  and outbound link the other. Deliberately *not* a card grid: one app in a three-card row leaves two
-  holes. Migrate to a card grid at three or more apps. The featured layout is an intentional n=1
-  choice, not an accident.
+- **Layout:** a two-column featured block — screenshots in a `col-lg-7`, and name, pitch, bullets,
+  call to action and platform line in a `col-lg-5`. Deliberately *not* a card grid: one app in a
+  three-card row leaves two holes. Migrate to a card grid at three or more apps. The featured layout
+  is an intentional n=1 choice, not an accident.
+- **Three screenshots, unequal:** the walk-through large on top, then the floor plan and the 3D
+  building side by side in a `1fr 1fr` grid beneath it. The three show different capabilities rather
+  than different angles, so one shot would undersell the app; an equal three-across strip was
+  rejected because nothing would lead and nothing would be legible.
 - **Surface:** its own subtly brand-tinted background. It sits between plain `#services` and
   `bg-light` `#why`, so a distinct surface avoids flipping the alternation for every section below.
 - **Theming:** do not import ItemAtlas's theme. Render the section in INFINET brand and let the app's
@@ -238,6 +255,22 @@ block, consistent with how the rest of the site's theming works.
 Trade-off: both files get fetched. Keep them compressed and `loading="lazy"` — they will be the
 heaviest assets on a site that otherwise ships four images.
 
+### Screenshot lightbox
+
+Each screenshot is a `<button>` that opens a Bootstrap modal (`modal-xl`, which caps at 1140px — the
+images are 1200px wide, so they show at essentially native size; `modal-fullscreen` would upscale
+them and look soft).
+
+**This needs no new dependency and no new JavaScript.** Bootstrap's bundle is already loaded, and
+each modal holds the *same* light/dark image pair with the same `.app-shot-light` / `.app-shot-dark`
+classes, so the existing CSS swap themes the enlarged view too. Nothing to keep in sync, and the
+browser reuses the already-fetched files.
+
+The trigger must stay a `<button>`, not a clickable `<div>` or `<figure>` — that is what gives
+keyboard operation, focus, and Bootstrap's escape handling and focus trap. `.app-shot` therefore
+carries a button reset. Note a `<figure>` cannot live inside a `<button>`, which is why the markup
+uses the button directly.
+
 ### Store badges
 
 Official artwork from Apple and Google only, never recoloured, redrawn or resized outside their
@@ -248,11 +281,15 @@ Nothing is launched at time of writing, on any platform. Because the site stays 
 apps are live (see the release workflow above), the section is built with real copy and the URLs are
 filled in last, rather than shipping a "coming soon" state to production.
 
-**How the download options are presented is still undecided.** Three official badges plus a plain
-Windows link reads as one odd item out, and four channels of official artwork — each with Greek
-variants and both themes to survive — is a lot of maintenance for a promo block whose stated job is
-to hand off to the ItemAtlas site. The alternative under consideration is a single primary call to
-action pointing at that site, with a quiet platform line beneath it.
+**Settled: no store badges.** The section carries one primary call to action — "Visit ItemAtlas3D",
+pointing at `https://infinet.gr/itematlas3d/` — with a quiet `iOS · Android · macOS · Windows` line
+beneath it. Three official badges plus a plain Windows link reads as one odd item out, and four
+channels of official artwork, each with Greek variants and both themes to survive, is a lot of
+maintenance for a promo block whose job is to hand off to the ItemAtlas page. That page carries all
+four purchase paths, Stripe included, so it is the right place for them.
+
+If badges are ever wanted after all, the constraint has not changed: Windows still has no store, so
+any badge row needs a deliberate answer for it rather than a link tacked on the end.
 
 ### Positioning copy this depends on
 

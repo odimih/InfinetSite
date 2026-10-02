@@ -1,1 +1,4 @@
 .DS_Store
+
+# Source captures and masters — not served by the site
+Images/originals/

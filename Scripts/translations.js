@@ -8,6 +8,7 @@ const translations = {
         nav_toggle_label: "Toggle navigation",
         darkmode_label: "Toggle dark mode",
         nav_services: "Services",
+        nav_apps: "Products",
         nav_why: "Why us",
         nav_projects: "Case Studies",
         nav_about: "About",
@@ -19,6 +20,8 @@ const translations = {
         hero_badge_tail: "IT & Business Hardware",
         hero_title: "AI‑Powered Applications & Business IT Solutions",
         hero_subtitle: "We design and build custom software that uses AI to automate work, improve decisions, and modernize your operations backed by reliable IT infrastructure and high‑quality business hardware.",
+        hero_apps_teaser: "New: ItemAtlas3D — our own app, now available",
+
         hero_trust: "Trusted by businesses in Greece since 1996.",
         hero_cta_primary: "Contact our team",
         hero_cta_secondary: "Explore services",
@@ -71,6 +74,23 @@ const translations = {
         svc4_li3: "• Technical support & troubleshooting",
         svc4_li4: "• Backup & disaster recovery",
         svc4_cta: "Discuss your IT needs",
+
+        // Apps
+        apps_title: "Our Products",
+        apps_subtitle: "Software we design, build and publish ourselves — not just for clients.",
+        apps_item_kicker: "Home & property inventory",
+        apps_item_text: "Map your home in 2D and 3D, record what is stored where, then walk through it to find anything — down to what is inside a specific box.",
+        apps_item_li1: "• Floor plans and 3D models of your rooms",
+        apps_item_li2: "• Every item tracked to its exact location",
+        apps_item_li3: "• Walk through your space to find things",
+        apps_item_cta: "Visit ItemAtlas3D",
+        apps_item_platforms: "iOS · Android · macOS · Windows",
+
+        apps_shot_zoom: "Enlarge screenshot",
+        apps_shot_close: "Close",
+        apps_shot_walk_title: "Walk through your space",
+        apps_shot_plan_title: "Plan a room in 2D",
+        apps_shot_building_title: "Your whole home in 3D",
 
         // Why us
         why_title: "Why choose INFINET",
@@ -139,6 +159,7 @@ const translations = {
         footer_tagline: "Reliable IT, software development, and internet solutions for businesses.",
         footer_links_title: "Quick links",
         footer_link_services: "Services",
+        footer_link_apps: "Products",
         footer_link_projects: "Case Studies",
         footer_link_about: "About",
         footer_link_contact: "Contact",
@@ -157,6 +178,7 @@ const translations = {
         nav_toggle_label: "Εναλλαγή πλοήγησης",
         darkmode_label: "Εναλλαγή σκοτεινού θέματος",
         nav_services: "Υπηρεσίες",
+        nav_apps: "Προϊόντα",
         nav_why: "Γιατί εμάς",
         nav_projects: "Έργα",
         nav_about: "Σχετικά",
@@ -168,6 +190,8 @@ const translations = {
         hero_badge_tail: "IT & Επαγγελματικό Hardware",
         hero_title: "Εφαρμογές & Λύσεις IT για επιχειρήσεις",
         hero_subtitle: "Σχεδιάζουμε και υλοποιούμε custom λογισμικό με ΤΝ που αυτοματοποιεί εργασίες, βελτιώνει τη λήψη αποφάσεων και εκσυγχρονίζει τις λειτουργίες της επιχείρησής σας χρησιμοποιόντας αξιόπιστη IT υποδομή και επαγγελματικό hardware.",
+        hero_apps_teaser: "Νέο: ItemAtlas3D — η δική μας εφαρμογή, διαθέσιμη τώρα",
+
         hero_trust: "Αξιόπιστος συνεργάτης επιχειρήσεων στην Ελλάδα από το 1996.",
         hero_cta_primary: "Επικοινωνήστε μαζί μας",
         hero_cta_secondary: "Δείτε τις υπηρεσίες",
@@ -220,6 +244,23 @@ const translations = {
         svc4_li3: "• Τεχνική υποστήριξη & troubleshooting",
         svc4_li4: "• Backup & αποκατάσταση δεδομένων",
         svc4_cta: "Συζητήστε τις IT ανάγκες σας",
+
+        // Apps
+        apps_title: "Τα προϊόντα μας",
+        apps_subtitle: "Λογισμικό που σχεδιάζουμε, αναπτύσσουμε και εκδίδουμε οι ίδιοι — όχι μόνο για πελάτες.",
+        apps_item_kicker: "Καταγραφή σπιτιού & ακινήτων",
+        apps_item_text: "Χαρτογραφήστε το σπίτι σας σε 2D και 3D, καταγράψτε τι φυλάσσεται πού και περιηγηθείτε μέσα σε αυτό για να βρείτε οτιδήποτε — μέχρι και το τι υπάρχει μέσα σε ένα συγκεκριμένο κουτί.",
+        apps_item_li1: "• Κατόψεις και τρισδιάστατα μοντέλα των χώρων σας",
+        apps_item_li2: "• Κάθε αντικείμενο στην ακριβή του θέση",
+        apps_item_li3: "• Περιηγηθείτε στον χώρο σας για να βρείτε αντικείμενα",
+        apps_item_cta: "Δείτε το ItemAtlas3D",
+        apps_item_platforms: "iOS · Android · macOS · Windows",
+
+        apps_shot_zoom: "Μεγέθυνση στιγμιότυπου",
+        apps_shot_close: "Κλείσιμο",
+        apps_shot_walk_title: "Περιηγηθείτε στον χώρο σας",
+        apps_shot_plan_title: "Σχεδιάστε ένα δωμάτιο σε 2D",
+        apps_shot_building_title: "Όλο το σπίτι σας σε 3D",
 
         // Why us
         why_title: "Γιατί να επιλέξετε την INFINET",
@@ -288,6 +329,7 @@ const translations = {
         footer_tagline: "Αξιόπιστες λύσεις IT, ανάπτυξης λογισμικού και διαδικτύου για επιχειρήσεις.",
         footer_links_title: "Γρήγοροι σύνδεσμοι",
         footer_link_services: "Υπηρεσίες",
+        footer_link_apps: "Προϊόντα",
         footer_link_projects: "Έργα",
         footer_link_about: "Σχετικά",
         footer_link_contact: "Επικοινωνία",
