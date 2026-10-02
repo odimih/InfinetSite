@@ -122,6 +122,10 @@ const translations = {
         cs3_title: "Smart Email Management Tool",
         cs3_tags: "Custom Outlook Add-in • Productivity",
         cs3_text: "A custom Microsoft Outlook application for organising, archiving, and following up on emails — giving teams a structured way to manage correspondence and never miss a follow-up.",
+
+        cs4_title: "Customer Relationship Management Platform",
+        cs4_tags: "Web Application • CRM • Email Campaigns",
+        cs4_text: "A web-based CRM for the same dermopharmaceutical company, tracking prospective customer companies, their contacts and the products they sell — with a built-in mail system for sending contact forms and newsletters.",
         cs_more_text: "Want to see more examples relevant to your industry?",
         cs_more_cta: "Ask for case studies",
 
@@ -293,6 +297,10 @@ const translations = {
         cs3_title: "Εργαλείο Έξυπνης Διαχείρισης Email",
         cs3_tags: "Προσαρμοσμένο Add-in Outlook • Παραγωγικότητα",
         cs3_text: "Custom add-in για το Microsoft Outlook, με δυνατότητες οργάνωσης, αρχειοθέτησης και παρακολούθησης email διασφαλίζοντας δομημένη ροή εργασίας και μηδενικές χαμένες απαντήσεις.",
+
+        cs4_title: "Πλατφόρμα Διαχείρισης Πελατειακών Σχέσεων",
+        cs4_tags: "Web Εφαρμογή • CRM • Email Καμπάνιες",
+        cs4_text: "Web εφαρμογή CRM για την ίδια δερμοφαρμακευτική εταιρεία, για την καταγραφή υποψήφιων πελατών, των επαφών τους και των προϊόντων που εμπορεύονται, με ενσωματωμένο σύστημα αποστολής φορμών επικοινωνίας και newsletter.",
         cs_more_text: "Δείτε πώς έχουμε βοηθήσει επιχειρήσεις σαν τη δική σας:",
         cs_more_cta: "Επικοινωνήστε για το δίκό σας case study",
 
