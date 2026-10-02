@@ -20,7 +20,8 @@ const translations = {
         hero_badge_tail: "IT & Business Hardware",
         hero_title: "AI‑Powered Applications & Business IT Solutions",
         hero_subtitle: "We design and build custom software that uses AI to automate work, improve decisions, and modernize your operations backed by reliable IT infrastructure and high‑quality business hardware.",
-        hero_apps_teaser: "New: ItemAtlas3D — our own app, now available",
+        hero_apps_teaser: "ItemAtlas3D — our own app, now available",
+        apps_new_badge: "NEW",
 
         hero_trust: "Trusted by businesses in Greece since 1996.",
         hero_cta_primary: "Contact our team",
@@ -77,7 +78,7 @@ const translations = {
 
         // Apps
         apps_title: "Our Products",
-        apps_subtitle: "Software we design, build and publish ourselves — not just for clients.",
+        apps_subtitle: "Applications we design and build, and you can find in the Apple, Google and Windows stores.",
         apps_item_kicker: "Home & property inventory",
         apps_item_text: "Map your home in 2D and 3D, record what is stored where, then walk through it to find anything — down to what is inside a specific box.",
         apps_item_li1: "• Floor plans and 3D models of your rooms",
@@ -190,7 +191,8 @@ const translations = {
         hero_badge_tail: "IT & Επαγγελματικό Hardware",
         hero_title: "Εφαρμογές & Λύσεις IT για επιχειρήσεις",
         hero_subtitle: "Σχεδιάζουμε και υλοποιούμε custom λογισμικό με ΤΝ που αυτοματοποιεί εργασίες, βελτιώνει τη λήψη αποφάσεων και εκσυγχρονίζει τις λειτουργίες της επιχείρησής σας χρησιμοποιόντας αξιόπιστη IT υποδομή και επαγγελματικό hardware.",
-        hero_apps_teaser: "Νέο: ItemAtlas3D — η δική μας εφαρμογή, διαθέσιμη τώρα",
+        hero_apps_teaser: "ItemAtlas3D — η δική μας εφαρμογή, διαθέσιμη τώρα",
+        apps_new_badge: "ΝΕΟ",
 
         hero_trust: "Αξιόπιστος συνεργάτης επιχειρήσεων στην Ελλάδα από το 1996.",
         hero_cta_primary: "Επικοινωνήστε μαζί μας",
@@ -247,7 +249,7 @@ const translations = {
 
         // Apps
         apps_title: "Τα προϊόντα μας",
-        apps_subtitle: "Λογισμικό που σχεδιάζουμε, αναπτύσσουμε και εκδίδουμε οι ίδιοι — όχι μόνο για πελάτες.",
+        apps_subtitle: "Εφαρμογές που σχεδιάζουμε και αναπτύσσουμε, και που θα βρείτε στα Apple, Google και Windows stores.",
         apps_item_kicker: "Καταγραφή σπιτιού & ακινήτων",
         apps_item_text: "Χαρτογραφήστε το σπίτι σας σε 2D και 3D, καταγράψτε τι φυλάσσεται πού και περιηγηθείτε μέσα σε αυτό για να βρείτε οτιδήποτε — μέχρι και το τι υπάρχει μέσα σε ένα συγκεκριμένο κουτί.",
         apps_item_li1: "• Κατόψεις και τρισδιάστατα μοντέλα των χώρων σας",

@@ -165,10 +165,12 @@ It ships on four platforms through three channels:
 | iOS | App Store |
 | macOS | App Store |
 | Android | Google Play |
-| Windows | Direct from the ItemAtlas site, paid through Stripe |
+| Windows | Microsoft Store (planned), and direct from the ItemAtlas site paid through Stripe |
 
-**Windows has no store, so no badge exists for it.** Any badge row is therefore structurally
-incomplete, which is the central constraint on how the section presents its download options.
+Windows was originally direct-sale only, which made any badge row structurally incomplete. A
+Microsoft Store listing is now planned as well, and the section copy already says the apps are
+findable in the "Apple, Google and Windows stores" — true once that listing exists, like the rest of
+this copy (see the release workflow above).
 
 ### Release workflow — read before writing any app copy
 
@@ -290,15 +292,17 @@ Nothing is launched at time of writing, on any platform. Because the site stays 
 apps are live (see the release workflow above), the section is built with real copy and the URLs are
 filled in last, rather than shipping a "coming soon" state to production.
 
-**Settled: no store badges.** The section carries one primary call to action — "Visit ItemAtlas3D",
-pointing at `https://infinet.gr/itematlas3d/` — with a quiet `iOS · Android · macOS · Windows` line
-beneath it. Three official badges plus a plain Windows link reads as one odd item out, and four
-channels of official artwork, each with Greek variants and both themes to survive, is a lot of
-maintenance for a promo block whose job is to hand off to the ItemAtlas page. That page carries all
-four purchase paths, Stripe included, so it is the right place for them.
+**Settled for now: no store badges.** The section carries one primary call to action — "Visit
+ItemAtlas3D", pointing at `https://infinet.gr/itematlas3d/` — with a quiet
+`iOS · Android · macOS · Windows` line beneath it. That page carries every purchase path, Stripe
+included, so it is the right place for them.
 
-If badges are ever wanted after all, the constraint has not changed: Windows still has no store, so
-any badge row needs a deliberate answer for it rather than a link tacked on the end.
+**Note the original reason for this has weakened.** It was settled partly because Windows had no
+store, so any badge row had one odd item out. With a Microsoft Store listing planned, three official
+badge families would cover every channel and a complete row becomes possible. What still argues
+against it is maintenance: three badge families, each with Greek variants and both themes to
+survive, inside a promo block whose job is to hand off. Worth revisiting once the Microsoft listing
+is real, rather than treating "no badges" as closed.
 
 ### Positioning copy this depends on
 
