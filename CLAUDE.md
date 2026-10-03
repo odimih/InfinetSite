@@ -402,6 +402,13 @@ than most sites can claim.
 
 If that setting is ever changed, the policy sentence must change with it.
 
+**No visitor analytics.** Plesk's Statistics pages show resource accounting only — bytes
+transferred per protocol per month, disk space per service. No page views, visitor counts,
+countries or referrers, so AWStats/Webalizer is not producing visitor reports. The policy discloses
+the aggregate usage figures anyway, because the control panel does say "Traffic this month" and a
+blanket "we do not measure traffic" would have been an easy contradiction to point at. The wording
+is "produce visitor statistics", which is the claim that actually matters.
+
 ### Historical note: how this was chased
 
 The policy discloses the host's access logs — IP, timestamp, request, status, user agent, referrer
