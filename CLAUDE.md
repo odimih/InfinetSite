@@ -392,7 +392,17 @@ more credible than boilerplate, and **no cookie banner is required.**
 - On free and standard tiers, sub-processor changes are published to a web page and continued use
   counts as acceptance — **no email notice**. Only Business plans get 14 days' warning.
 
-### Open item: server log retention
+### Server log retention — settled
+
+Plesk (**not** cPanel — the hosting is Plesk on Windows/IIS at top.host). Under
+**Dev Tools → Logs → Log Rotation**: rotation is on, by time, **daily**, with **maximum number of
+log files: 1**, compressed. So the current day's log plus one archived copy — roughly 48 hours
+before deletion. The policy states that outright in both languages, which is a stronger position
+than most sites can claim.
+
+If that setting is ever changed, the policy sentence must change with it.
+
+### Historical note: how this was chased
 
 The policy discloses the host's access logs — IP, timestamp, request, status, user agent, referrer
 — but says only that they are kept "for a limited period under our host's own retention schedule".
