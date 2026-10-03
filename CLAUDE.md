@@ -165,6 +165,31 @@ Two things follow:
 Upload **additively**. `/itematlas3d/` lives on the host but not in this repo, so anything that
 mirrors or syncs the repo onto the web root rather than copying over it would delete that page.
 
+### Check what production actually runs before a partial upload
+
+Because uploads are manual, the repo and the live site drift, and a partial upload can leave the
+site referencing files that were never sent. One command answers it:
+
+```bash
+curl -s https://infinet.gr/ | grep 'Scripts/'
+```
+
+**Files that must travel together.** `index.html` and the scripts it loads are one unit. The script
+split replaced `Scripts/index.js` with `Scripts/core.js` plus `Scripts/contact.js`, so uploading the
+new HTML without both leaves a page that renders and then dies at the first missing script — no
+language switching, no dark mode, no contact form, no footer year, and nothing visibly wrong until
+someone clicks. The same applies to the legal pages, which 404 from the footer until they are up.
+
+The set for that upload:
+
+```
+index.html   style.css
+Scripts/core.js   Scripts/contact.js
+privacy.html   privacy-el.html   terms.html   terms-el.html
+```
+
+`Scripts/index.js` can stay on the server afterwards; nothing references it.
+
 ## Planned: own-products section (`#apps`)
 
 INFINET is moving from services-only to also publishing its own **cross-platform** apps. The first is
@@ -188,6 +213,9 @@ this copy (see the release workflow above).
 
 ### Release workflow — read before writing any app copy
 
+**ItemAtlas3D was approved by Apple and Google and the section went live on 3 October 2026.** The
+pattern below is recorded for the next product rather than as a pending gate.
+
 The work is committed and pushed as normal, and simply **not uploaded** until the apps are actually
 published. Copy is therefore written in the present tense, as though the apps are live, even while
 they are not; the store URLs are filled in once the listings exist and before the site is uploaded.
@@ -195,6 +223,10 @@ they are not; the store URLs are filled in once the listings exist and before th
 Because deployment is a manual upload (see Deploying above), none of this reaches production early,
 so **"it is not true yet" is not a reason to soften the wording** — and committing or pushing it is
 not a reason for alarm either. The only step that must wait is the upload.
+
+In practice the first time round the upload went out ahead of approval, so the site briefly
+advertised an unreleased app. Low traffic made it moot, but the ordering is the whole point of the
+pattern: approval first, upload second.
 
 **ItemAtlas3D has its own site, built separately and with its own theme, but it is served from this
 same domain at `https://infinet.gr/itematlas3d/`.** It is not in this repo and never has been — check
