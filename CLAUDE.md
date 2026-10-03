@@ -392,6 +392,16 @@ more credible than boilerplate, and **no cookie banner is required.**
 - On free and standard tiers, sub-processor changes are published to a web page and continued use
   counts as acceptance — **no email notice**. Only Business plans get 14 days' warning.
 
+### Open item: server log retention
+
+The policy discloses the host's access logs — IP, timestamp, request, status, user agent, referrer
+— but says only that they are kept "for a limited period under our host's own retention schedule".
+**Ask top.host for the actual number and put it in**, in both languages. Their privacy pages sit
+behind a Cloudflare challenge, so it could not be looked up; a support ticket is the way.
+
+Server logs are the single most common omission in a brochure-site privacy policy, because the site
+owner never sees them and forgets the host is keeping them on their behalf.
+
 ### Retention — deliberately general
 
 The policy uses general wording ("as long as necessary to respond and for a reasonable follow-up
