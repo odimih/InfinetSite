@@ -62,6 +62,50 @@
     />
 
     <link rel="stylesheet" href="style.css?v=20261003b" />
+
+    <!-- Structured data: one block describing the business as a real-world entity.
+         It cannot follow the client-side language switch and should not try to, so
+         it is written in the page's default language (English — new visitors always
+         get English) and must agree with the visible contact section and the legal
+         pages. `legalName` is the exception: that is the name on the ΓΕΜΗ record, so
+         it stays Greek, with the Latin form as `alternateName`. If the address,
+         phone or registry numbers ever change, change them here too. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://infinet.gr/#organization",
+        "name": "INFINET IT Solutions",
+        "legalName": "Οδυσσέας Μηχανετζής - INFINET",
+        "alternateName": "Odysseas Michanetzis - INFINET",
+        "url": "https://infinet.gr/",
+        "logo": "https://infinet.gr/Images/infinetLogo.png",
+        "description": "INFINET IT Solutions builds AI-powered mobile, web and desktop applications and provides IT infrastructure and business hardware for companies in Greece. In business since 1996.",
+        "foundingDate": "1996",
+        "email": "info@infinet.gr",
+        "telephone": "+30-2295-306595",
+        "vatID": "EL032966102",
+        "taxID": "032966102",
+        "identifier": {
+            "@type": "PropertyValue",
+            "name": "ΓΕΜΗ (General Commercial Registry)",
+            "value": "2118001000"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Thesi Plagia",
+            "addressLocality": "Kapandriti",
+            "postalCode": "19014",
+            "addressRegion": "Attiki",
+            "addressCountry": "GR"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Greece"
+        },
+        "knowsLanguage": ["el", "en"]
+    }
+    </script>
 </head>
 <body>
     <!-- Navbar -->
