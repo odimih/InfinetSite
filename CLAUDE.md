@@ -25,7 +25,11 @@ overrides in `style.css`, which target Bootstrap's own classes.
 ## Files
 
 ```
-index.html              # entire page: navbar, hero, 6 sections, footer
+index.html              # the marketing page: navbar, hero, 6 sections, footer
+privacy.html            # privacy policy (EN translation)
+privacy-el.html         # privacy policy (EL — governing text)
+terms.html              # terms of use (EN translation)
+terms-el.html           # terms of use (EL — governing text)
 style.css               # custom styles + all dark-mode overrides
 Scripts/core.js         # shared: i18n, dark mode, footer year, smooth scroll
 Scripts/contact.js      # homepage only: EmailJS contact form
@@ -57,6 +61,8 @@ language. `setLanguage(lang)` walks the DOM and swaps:
 - `[data-i18n-placeholder="key"]` → sets `placeholder`
 - `[data-i18n-content="key"]` → sets the `content` attribute (used by `<meta name="description">`)
 - `[data-i18n-aria-label="key"]` → sets `aria-label`
+- `[data-i18n-href="key"]` → sets `href`. Needed because the legal documents are a separate file
+  per language, so the footer's link *target* changes with the language, not only its label.
 
 Open Graph and Twitter tags are deliberately **not** translated: crawlers read them before any JS
 runs, so swapping them client-side changes nothing a crawler sees and only desyncs the DOM from what
@@ -336,10 +342,14 @@ Deferred until there is more than one app: an apps-published stat in the About "
 and any dedicated treatment of the ItemAtlas business tier (B2B SaaS, a genuinely different pitch,
 and possibly a stronger bridge to the services business than the consumer app is).
 
-## Planned: privacy and terms pages
+## Legal pages
 
-The footer's two `#` placeholders become real pages. Everything below is settled fact; only the
-drafting remains.
+Four files at the repo root: `privacy.html` / `privacy-el.html` and `terms.html` / `terms-el.html`.
+Linked from the footer only, not the navbar.
+
+**The Greek is the governing text and the English is a translation.** Both say so, in their Language
+section. If you change one, change the other in the same commit — a policy that contradicts itself
+across languages is worse than one that is merely out of date.
 
 ### Controller and company identification
 
@@ -407,29 +417,30 @@ false. The same applies to `localStorage`, which is shared across one origin.
 Reuse the controller identity block **verbatim** from the already-submitted store policy. If the two
 disagree on the entity's details, that is the kind of discrepancy a reviewer notices.
 
-### Decisions
+### How the pages are built
 
-- **`privacy.html` and `terms.html` at the repo root**, not `/privacy/index.html`. `file://` does
-  not serve `index.html` from a directory, so directory URLs break in exactly the local check this
-  project uses to verify changes.
-- **Separate documents per language** (`privacy.html` / `privacy-el.html`), with the switcher
-  linking across rather than swapping strings. A policy is roughly 70 blocks; running it through
-  `data-i18n` would double `translations.js` and fragment prose a lawyer needs to read end to end.
-  The cost is that the language toggle behaves differently on these two pages.
-- **"Terms of use", not "Terms of service"** — there are no accounts, payments or user content
-  here. If Stripe sales ever run from the product path, consumer commercial terms (refunds, the EU
-  14-day withdrawal right for digital content and its waiver) belong there, not on the company site.
-- **Greek governs.** The English is marked as a translation. Note this holds weakly against a
-  consumer who only read the English, which is academic for a B2B site but would matter for
-  ItemAtlas.
-- Nav and footer links on sub-pages must become `index.html#services`, since `#services` resolves to
-  nothing there.
+- **Flat files at the repo root**, not `/privacy/index.html`. `file://` does not serve `index.html`
+  from a directory, so directory URLs would break in exactly the local check this project uses.
+- **Separate document per language**, rather than running legal prose through `data-i18n`. A policy
+  is roughly 70 blocks; keys would double `translations.js` and fragment text a lawyer needs to read
+  end to end.
+- **The shared navbar and footer still use `data-i18n`.** Each legal page asserts its own language
+  with a one-line inline script (`localStorage.setItem("lang", "el")`) placed **before** `core.js`,
+  so the chrome translates itself to match the document. Without that, you get a Greek policy
+  wearing an English navbar.
+- **The language dropdown on these pages carries no `lang-en` / `lang-el` ids.** Those ids are what
+  `core.js` binds its swap handlers to; here the items are plain links to the sibling document.
+  Keeping `id="langDropdown"` on the toggle is deliberate — `core.js` relabels it from the stored
+  language, which the inline script has already set correctly.
+- **All in-page anchors are `index.html#services`**, since `#services` resolves to nothing here.
+- **"Terms of use", not "Terms of service"** — no accounts, payments or user content. If Stripe
+  sales ever run from the product path, consumer commercial terms (refunds, the EU 14-day
+  withdrawal right for digital content and its waiver) belong there, not on the company site.
+- Company identification (ΓΕΜΗ, ΑΦΜ) sits in the footer of **every** page, because the
+  disclosure must be permanently accessible, not buried one click away.
 
 ## Known rough edges
 
-- Footer "Privacy policy" and "Terms of service" link to `#` — the pages don't exist yet, though
-  everything needed to write them is settled above. The smooth-scroll handler swallows the click so
-  they no longer jump to the top and leave a bare `#` in the URL, but they are inert placeholders.
 - `nav_contact` exists in both language blocks and is referenced nowhere in the markup — dead key.
   It holds exactly "Contact" / "Επικοινωνία", so it is worth reviving rather than deleting if the CTA
   label is ever shortened.

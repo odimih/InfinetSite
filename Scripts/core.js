@@ -56,6 +56,12 @@ function setLanguage(lang) {
         if (t[key] !== undefined) el.setAttribute("content", t[key]);
     });
 
+    // Swap link targets (the legal pages are a separate file per language)
+    document.querySelectorAll("[data-i18n-href]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-href");
+        if (t[key] !== undefined) el.setAttribute("href", t[key]);
+    });
+
     // Swap accessible labels
     document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
         const key = el.getAttribute("data-i18n-aria-label");

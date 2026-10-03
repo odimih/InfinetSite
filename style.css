@@ -246,6 +246,83 @@ footer a:hover {
     color: #212121;
 }
 
+/* Legal pages (privacy, terms) */
+.legal {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+}
+
+/* Legal prose wants a narrower measure than the marketing sections. */
+.legal-body {
+    max-width: 68ch;
+}
+
+.legal h1 {
+    font-weight: 700;
+}
+
+.legal h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.legal h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.legal p,
+.legal li {
+    color: #444;
+}
+
+.legal .lead-note {
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.legal-updated {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.legal-identity {
+    display: grid;
+    grid-template-columns: minmax(9rem, auto) 1fr;
+    gap: 0.35rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.legal-identity dt {
+    font-weight: 600;
+    color: #333;
+}
+
+.legal-identity dd {
+    margin: 0;
+    color: #444;
+}
+
+@media (max-width: 575.98px) {
+    .legal-identity {
+        grid-template-columns: 1fr;
+        gap: 0 0;
+    }
+
+    .legal-identity dd {
+        margin-bottom: 0.6rem;
+    }
+}
+
+.legal-identity-inline {
+    color: inherit;
+    opacity: 0.75;
+}
+
 /* Hero teaser for the products section */
 .hero-apps-teaser {
     text-decoration: none;
@@ -569,4 +646,20 @@ footer a:hover {
 [data-bs-theme="dark"] .app-platforms,
 [data-bs-theme="dark"] .app-points li {
     color: #94a3b8;
+}
+
+/* Legal pages */
+[data-bs-theme="dark"] .legal p,
+[data-bs-theme="dark"] .legal li,
+[data-bs-theme="dark"] .legal-identity dd {
+    color: #c3ced9;
+}
+
+[data-bs-theme="dark"] .legal .lead-note,
+[data-bs-theme="dark"] .legal-identity dt {
+    color: #e2e8f0;
+}
+
+[data-bs-theme="dark"] .legal-updated {
+    color: #8fa3b5;
 }

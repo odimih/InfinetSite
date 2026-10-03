@@ -170,7 +170,9 @@ const translations = {
         footer_link_contact: "Contact",
         footer_legal_title: "Legal",
         footer_privacy: "Privacy policy",
-        footer_terms: "Terms of service",
+        footer_terms: "Terms of use",
+        footer_privacy_href: "privacy.html",
+        footer_terms_href: "terms.html",
         footer_copy: "INFINET. All rights reserved.",
     },
 
@@ -346,6 +348,8 @@ const translations = {
         footer_legal_title: "Νομικά",
         footer_privacy: "Πολιτική απορρήτου",
         footer_terms: "Όροι χρήσης",
+        footer_privacy_href: "privacy-el.html",
+        footer_terms_href: "terms-el.html",
         footer_copy: "INFINET. Με επιφύλαξη παντός δικαιώματος.",
     }
 };
