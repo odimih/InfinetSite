@@ -523,6 +523,35 @@ disagree on the entity's details, that is the kind of discrepancy a reviewer not
 - Company identification (ΓΕΜΗ, ΑΦΜ) sits in the footer of **every** page, because the
   disclosure must be permanently accessible, not buried one click away.
 
+## Structured data
+
+`index.html` carries one `application/ld+json` block in `<head>`: a schema.org `Organization`
+describing the business — name, legal name, ΓΕΜΗ and ΑΦΜ, registered address, email, phone,
+founding year, area served. It renders nothing. Its job is to give search engines a stable entity
+for "INFINET", which is generic enough that several unrelated companies share the name.
+
+Three rules, each load-bearing:
+
+- **It is in English, not Greek.** The block is static — it cannot follow the client-side language
+  switch, and should not try to. New visitors always get English (see Translations above), and
+  structured data that disagrees with the visible page is worse than none, so it matches the English
+  contact section. The sole exception is `legalName`, which is the Greek name on the ΓΕΜΗ record and
+  therefore not a localisable label; the Latin form is `alternateName`.
+- **It must agree with the visible page.** `address`, `telephone`, `email`, ΓΕΜΗ and ΑΦΜ are all
+  published visibly too — in `#contact`, in the footer identity line and in the legal pages' identity
+  block. **That makes four places, and the identity details must change in all of them together.**
+- **`index.html` only.** The legal pages describe documents rather than the organisation, and
+  duplicating the block would mean four more copies to keep in step.
+
+It is not a ranking signal. Google is explicit that structured data aids understanding and unlocks
+rich presentation; it does not directly move rankings. Validate changes with Google's Rich Results
+Test and the schema.org validator.
+
+**Deliberately not included:** a `WebSite` entity with `creator` pointing at the organisation — the
+machine-readable form of a "designed by INFINET" credit. On our own site it asserts something search
+engines already assume. That pattern belongs on *client* sites, where authorship is not obvious,
+paired with a visible footer link.
+
 ## Known rough edges
 
 - `nav_contact` exists in both language blocks and is referenced nowhere in the markup — dead key.
