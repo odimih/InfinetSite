@@ -252,9 +252,13 @@ footer a:hover {
     padding-bottom: 4rem;
 }
 
-/* Legal prose wants a narrower measure than the marketing sections. */
+/* Legal prose wants a narrower measure than the marketing sections: past about
+   75 characters a line is hard to track back to on the return sweep. Centred,
+   because flush left inside the container leaves a lopsided gap on the right
+   that reads as a bug rather than a choice. */
 .legal-body {
-    max-width: 68ch;
+    max-width: 72ch;
+    margin-inline: auto;
 }
 
 .legal h1 {
