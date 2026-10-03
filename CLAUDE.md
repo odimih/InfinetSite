@@ -165,6 +165,21 @@ Two things follow:
 Upload **additively**. `/itematlas3d/` lives on the host but not in this repo, so anything that
 mirrors or syncs the repo onto the web root rather than copying over it would delete that page.
 
+### Cache busting — bump the version on every release
+
+Our own assets carry a version query string: `style.css?v=20261003`,
+`Scripts/translations.js?v=20261003`, and the same on `core.js` and `contact.js`, in all five
+pages. **Bump that token whenever any of those four files changes.**
+
+This exists because of a real bug. The first full upload changed `index.html` and
+`translations.js` together, but only the HTML had a new URL, so browsers kept their cached
+`translations.js`. A returning visitor got new markup with an old string table — and since
+`setLanguage` silently skips keys it cannot find, a Greek visitor would have seen the whole
+Products section, the hero badge and the fourth case study stuck in English, with no error
+anywhere.
+
+The CDN links need no version; they are already pinned to exact releases.
+
 ### Check what production actually runs before a partial upload
 
 Because uploads are manual, the repo and the live site drift, and a partial upload can leave the
