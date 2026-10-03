@@ -328,11 +328,100 @@ Deferred until there is more than one app: an apps-published stat in the About "
 and any dedicated treatment of the ItemAtlas business tier (B2B SaaS, a genuinely different pitch,
 and possibly a stronger bridge to the services business than the consumer app is).
 
+## Planned: privacy and terms pages
+
+The footer's two `#` placeholders become real pages. Everything below is settled fact; only the
+drafting remains.
+
+### Controller and company identification
+
+A **sole proprietorship**, so the controller is a natural person trading under a business name —
+not a company. PD 131/2003 (transposing the e-Commerce Directive) requires these to be easily,
+directly and permanently accessible, and the VAT number is required because IT services are
+VAT-liable:
+
+| | |
+|---|---|
+| Name | Οδυσσέας Μηχανετζής - INFINET / Odysseas Michanetzis - INFINET |
+| ΓΕΜΗ | 2118001000 |
+| ΑΦΜ | 032966102 |
+| Registered address | Θέση Πλαγιά, 19014, Καπανδρίτι, Αττική |
+
+The contact section previously said Afidnes; it now carries the registered address, so the site and
+the register agree.
+
+### What the site actually processes
+
+Short, and worth keeping short — **no cookies, no analytics, no trackers, no social embeds.** The
+only third-party origin the page loads is `cdn.jsdelivr.net`. A policy that can say this plainly is
+more credible than boilerplate, and **no cookie banner is required.**
+
+| Data | Processor | Notes |
+|---|---|---|
+| Name, email, company, message | **EmailJS Pte. Ltd.** (Singapore) | Servers in the USA on AWS |
+| Mailbox holding those enquiries | **Microsoft 365** | |
+| Website hosting | **top.host** | Greek, so no third-country transfer |
+| Visitor IP on every page load | **jsDelivr** CDN | |
+| `lang`, `darkMode` | — | `localStorage`, functional only, exempt from consent |
+
+### EmailJS — checked, and in order
+
+- Its **DPA is incorporated into the Terms and Conditions**, so accepting those at registration
+  formed the Article 28 contract. Nothing further to sign.
+- Transfers to the USA rely on the **EU Standard Contractual Clauses**, named in the DPA.
+- EmailJS retains request and metadata history for **30 days**. That is their schedule, not ours,
+  and the policy should say so separately from our own retention.
+- On free and standard tiers, sub-processor changes are published to a web page and continued use
+  counts as acceptance — **no email notice**. Only Business plans get 14 days' warning.
+
+### Retention — deliberately general
+
+The policy uses general wording ("as long as necessary to respond and for a reasonable follow-up
+period") rather than a fixed number. A stated period is a promise, and an unenforced promise is a
+misstatement.
+
+**If a concrete period is ever wanted**, do not just edit the text — make it true first. Microsoft
+365 supports a retention policy that auto-deletes a folder's contents after a set age: route form
+emails into a "Website enquiries" folder, set the policy to 24 months, and only then state 24 months
+in the document. Enquiries that become business move out of that folder and fall under the longer
+business-records period Greek tax law requires, generally five years.
+
+### Scope — load-bearing, not housekeeping
+
+`infinet.gr/itematlas3d/` is the **same origin** as the rest of the site, and it has its own privacy
+policy already submitted to the stores. So the site policy must scope itself **by path**, near the
+top, not in a footnote.
+
+Without that, "we set no cookies" is a claim about the whole domain — and if Stripe ever runs on the
+product path for Windows sales, it sets cookies and the strongest sentence in the policy becomes
+false. The same applies to `localStorage`, which is shared across one origin.
+
+Reuse the controller identity block **verbatim** from the already-submitted store policy. If the two
+disagree on the entity's details, that is the kind of discrepancy a reviewer notices.
+
+### Decisions
+
+- **`privacy.html` and `terms.html` at the repo root**, not `/privacy/index.html`. `file://` does
+  not serve `index.html` from a directory, so directory URLs break in exactly the local check this
+  project uses to verify changes.
+- **Separate documents per language** (`privacy.html` / `privacy-el.html`), with the switcher
+  linking across rather than swapping strings. A policy is roughly 70 blocks; running it through
+  `data-i18n` would double `translations.js` and fragment prose a lawyer needs to read end to end.
+  The cost is that the language toggle behaves differently on these two pages.
+- **"Terms of use", not "Terms of service"** — there are no accounts, payments or user content
+  here. If Stripe sales ever run from the product path, consumer commercial terms (refunds, the EU
+  14-day withdrawal right for digital content and its waiver) belong there, not on the company site.
+- **Greek governs.** The English is marked as a translation. Note this holds weakly against a
+  consumer who only read the English, which is academic for a B2B site but would matter for
+  ItemAtlas.
+- Nav and footer links on sub-pages must become `index.html#services`, since `#services` resolves to
+  nothing there.
+
 ## Known rough edges
 
-- Footer "Privacy policy" and "Terms of service" link to `#` — the pages still don't exist. The
-  smooth-scroll handler now swallows the click so they no longer jump to the top and leave a bare `#`
-  in the URL, but they are inert placeholders.
+- Footer "Privacy policy" and "Terms of service" link to `#` — the pages don't exist yet, though
+  everything needed to write them is settled above. The smooth-scroll handler swallows the click so
+  they no longer jump to the top and leave a bare `#` in the URL, but they are inert placeholders.
 - `nav_contact` exists in both language blocks and is referenced nowhere in the markup — dead key.
   It holds exactly "Contact" / "Επικοινωνία", so it is worth reviving rather than deleting if the CTA
   label is ever shortened.
