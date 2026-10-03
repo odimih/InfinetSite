@@ -396,8 +396,18 @@ more credible than boilerplate, and **no cookie banner is required.**
 
 The policy discloses the host's access logs — IP, timestamp, request, status, user agent, referrer
 — but says only that they are kept "for a limited period under our host's own retention schedule".
-**Ask top.host for the actual number and put it in**, in both languages. Their privacy pages sit
-behind a Cloudflare challenge, so it could not be looked up; a support ticket is the way.
+**Ask top.host for the actual number and put it in**, in both languages.
+
+Two dead ends already walked, so don't repeat them. Their privacy notice and terms pages both sit
+behind a Cloudflare challenge and cannot be read programmatically. And the retention clause in those
+terms — "up to one year after the end of the relationship" — is about **customer account data**,
+the contract between top.host and us. It is not about visitors' access logs, and using that figure
+would claim visitor IPs are held for the life of the hosting contract plus a year.
+
+The better route is the hosting control panel: on cPanel, "Raw Access Logs" exposes whether archives
+are kept after rotation, and that is the account holder's own setting. If archiving is off, logs
+rotate daily and the policy can say so plainly, which is a stronger statement than any period the
+host could quote.
 
 Server logs are the single most common omission in a brochure-site privacy policy, because the site
 owner never sees them and forgets the host is keeping them on their behalf.
