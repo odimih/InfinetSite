@@ -25,20 +25,28 @@ overrides in `style.css`, which target Bootstrap's own classes.
 ## Files
 
 ```
-index.html              # entire page: navbar, hero, 5 sections, footer
+index.html              # entire page: navbar, hero, 6 sections, footer
 style.css               # custom styles + all dark-mode overrides
-Scripts/index.js        # all behaviour (i18n, dark mode, form, smooth scroll)
+Scripts/core.js         # shared: i18n, dark mode, footer year, smooth scroll
+Scripts/contact.js      # homepage only: EmailJS contact form
 Scripts/translations.js # the en/el string table
-Images/                 # logo (2 variants) + 2 content photos
+Images/                 # logos, 2 content photos, ItemAtlas3D icon + screenshots
+Images/originals/       # source captures, gitignored — not served
 ```
 
 Page structure, in order: fixed navbar → `#hero` (a `<header>`, not a `<section>`) → `#services` →
 `#why` → `#projects` (labelled "Case Studies" in the nav) → `#about` → `#contact` → footer.
 
-## The three systems in `Scripts/index.js`
+## The three systems in `Scripts/`
 
 Everything runs at parse time at the bottom of `<body>` — there is no `DOMContentLoaded` wrapper, so
-the script tags must stay last, and `translations.js` must load **before** `index.js`.
+the script tags must stay last, and `translations.js` must load **before** `core.js`, which must
+load before `contact.js`.
+
+`core.js` runs on **every** page, including the legal pages, so every DOM lookup in it is guarded.
+`contact.js` is wrapped entirely in an `#contact-form` guard. Keep it that way: these files run at
+parse time, so one unguarded lookup returning null throws and silently kills everything after it —
+which is exactly the bug the split fixed.
 
 ### 1. Translations (EN / EL)
 
@@ -66,7 +74,7 @@ in both languages and nothing in the markup referenced them, so `setLanguage` ne
 hardcoded English stayed on screen. A parity check between `en` and `el` does not catch this; the
 check that does is the reverse one, for keys that exist in the table but appear in no `data-i18n*`
 attribute. `nav_contact` is the only one left, and the three `contact_*` status strings are read
-directly by `index.js` rather than from markup, so they are expected to be absent.
+directly by `contact.js` rather than from markup, so they are expected to be absent.
 
 Choice is persisted in `localStorage["lang"]`; **new visitors always get English**, regardless of
 browser locale. This is deliberate — don't "improve" it to sniff `navigator.language`.
@@ -110,7 +118,7 @@ EmailJS, client-side only — there is no server. `emailjs.sendForm` posts the f
 input `name` attributes are the template variables: `from_name`, `from_email`, `company`, `message`.
 Renaming an input breaks the email template.
 
-The public IDs are in `Scripts/index.js`: init key `l0EOwZb5bmNaQ2LIj`, service `service_wy11xkq`,
+The public IDs are in `Scripts/contact.js`: init key `l0EOwZb5bmNaQ2LIj`, service `service_wy11xkq`,
 template `template_551gonp`. These are publishable browser keys, not secrets, but they are live
 production values — don't swap them for test values in a commit.
 
