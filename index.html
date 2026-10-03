@@ -228,12 +228,17 @@
                          arrives. Without them the column collapses and everything below
                          jumps down on load. Update both if the file is ever resized.
                          Decorative, so alt is empty — it illustrates the heading beside
-                         it and names nothing a screen reader is not already told. -->
+                         it and names nothing a screen reader is not already told.
+                         fetchpriority="high" because this is the LCP element: images
+                         default to low priority until layout proves them visible, which
+                         puts it behind the CDN stylesheets. Only ever one per page —
+                         marking a second thing high just restores the original tie. -->
                     <img
                         src="Images/ai-hardware.jpg"
                         alt=""
                         width="1200"
                         height="675"
+                        fetchpriority="high"
                         class="img-fluid rounded-4 shadow-sm mb-4 w-100"
                     />
                     <!-- Simple illustrative block -->
