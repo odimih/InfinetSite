@@ -222,10 +222,18 @@
                     </p>
                 </div>
                 <div class="col-lg-6">
-                    <!-- Hero image -->
+                    <!-- Hero image. width/height are the image's intrinsic pixels, not
+                         its display size: .img-fluid keeps height:auto, so they only give
+                         the browser the aspect ratio to reserve space before the file
+                         arrives. Without them the column collapses and everything below
+                         jumps down on load. Update both if the file is ever resized.
+                         Decorative, so alt is empty — it illustrates the heading beside
+                         it and names nothing a screen reader is not already told. -->
                     <img
                         src="Images/ai-hardware.jpg"
-                        alt="INFINET IT Solutions"
+                        alt=""
+                        width="1200"
+                        height="675"
                         class="img-fluid rounded-4 shadow-sm mb-4 w-100"
                     />
                     <!-- Simple illustrative block -->
